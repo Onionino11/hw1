@@ -1,0 +1,10 @@
+CREATE TABLE if NOT EXISTS UTENTE(
+ID INT PRIMARY KEY, 
+Nome VARCHAR(255),
+Cognome VARCHAR(255),
+DataNascita DATE,
+Città VARCHAR(255),
+Provincia VARCHAR(255),
+Privacy BOOL
+);
+
