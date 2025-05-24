@@ -17,7 +17,7 @@ function createItem(elemento) {
 
     const img = document.createElement('img');
     img.classList.add('item-img');
-    img.src = elemento.immagine || 'default.png';
+    img.src = elemento.immagine ? 'assets/img/' + elemento.immagine : 'assets/img/default.png';
     panelItem.appendChild(img);
 
     const itemBody = document.createElement('div');
@@ -46,19 +46,19 @@ function createItem(elemento) {
     if (elemento.burger) {
         const burgerIcon = document.createElement('img');
         burgerIcon.classList.add('burger', 'icon');
-        burgerIcon.src = 'burger.svg';
+        burgerIcon.src = 'assets/img/burger.svg';
         opzionali.appendChild(burgerIcon);
     }
     if (elemento.chips) {
         const chipsIcon = document.createElement('img');
         chipsIcon.classList.add('chips', 'icon');
-        chipsIcon.src = 'chips.svg';
+        chipsIcon.src = 'assets/img/chips.svg';
         opzionali.appendChild(chipsIcon);
     }
     if (elemento.drink) {
         const drinkIcon = document.createElement('img');
         drinkIcon.classList.add('drink', 'icon');
-        drinkIcon.src = 'drink.svg';
+        drinkIcon.src = 'assets/img/drink.svg';
         opzionali.appendChild(drinkIcon);
     }
 

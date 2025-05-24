@@ -20,7 +20,7 @@ let data = {
         {
             nome: "PER INIZIARE",
             descrizione: "Come fai a non farti tentare? I migliori prodotti fritti in olio di semi di girasole Altoleico",
-            immagine: "Classiche.jpg" ,
+            immagine: "assets/img/Classiche.jpg" ,
             prodotti: 9,
             burger: false,
             chips: false,
@@ -29,7 +29,7 @@ let data = {
         {
             nome: "MALU PROMO MENU'",
             descrizione: "MENU COMPLETO BURGER CONTORNO E BEVANDA'",
-            immagine: "Classico.jpeg" ,
+            immagine: "assets/img/Classico.jpeg" ,
             prodotti: 14,
             burger: true,
             chips: true,
@@ -39,7 +39,7 @@ let data = {
         {
             nome: "MALU BURGER (SOLO PANINO)",
             descrizione: "Piccolo = 100gr / Medio = 180gr / Malu = Tutto doppio",
-            immagine: "Pistacchioso.jpeg",
+            immagine: "assets/img/Pistacchioso.jpeg",
             prodotti: 16,
             burger: true,
             chips: false,
@@ -48,7 +48,7 @@ let data = {
         {
             nome: "MALU LIGHT",
             descrizione: "Insalate Hamburger Veg. Piatti Leggeri ma dal Gusto Malu",
-            immagine: "MaluLight.jpeg",
+            immagine: "assets/img/MaluLight.jpeg",
             prodotti: 5,
             burger: false,
             chips: false,
@@ -57,7 +57,7 @@ let data = {
         {
             nome: "DA BERE",
             descrizione: "",
-            immagine: "DaBere.jpeg",
+            immagine: "assets/img/DaBere.jpeg",
             prodotti: 13,
             burger: false,
             chips: false,
@@ -66,7 +66,7 @@ let data = {
         {
             nome: "DOLCI",
             descrizione: "Per finire in bellezza una Cena Malu",
-            immagine: "Dolci.jpg",
+            immagine: "assets/img/Dolci.jpg",
             prodotti: 1,
             burger: false,
             chips: false,
@@ -78,13 +78,13 @@ let data = {
         {
             nome: "ANELLI DI CIPOLLA SPECIAL",
             descrizione: "Anelli di Cipolla pastellati alla birra*",
-            immagine: "anelli-di-cipolla.jpg",
+            immagine: "assets/img/anelli-di-cipolla.jpg",
             prezzo: 3.40
         },
         {
             nome: "PATATINE CLASSICHE",
             descrizione: "Patatine Fritte (Really Crunch Lambweston)*",
-            immagine: "patatine-classiche.jpg",
+            immagine: "assets/img/patatine-classiche.jpg",
             varianti: [
                 {
                     tipo: "Classiche",
@@ -99,7 +99,7 @@ let data = {
         {
             nome: "AMERICANE",
             descrizione: "Patatine Fritte*, Würstel e Salsa Cheddar",
-            immagine: "americane.jpg",
+            immagine: "assets/img/americane.jpg",
             varianti: [
                 {
                     tipo: "Classiche",
@@ -114,7 +114,7 @@ let data = {
         {
             nome: "FORMAGGIO E BACON",
             descrizione: "Patatine Lambweston*, Salsa Cheddar e Bacon croccante",
-            immagine: "formaggio-e-bacon.jpg",
+            immagine: "assets/img/formaggio-e-bacon.jpg",
             varianti: [
                 {
                     tipo: "Classiche",
@@ -129,7 +129,7 @@ let data = {
         {
             nome: "PATATINE AL FORMAGGIO",
             descrizione: "Patatine Lambweston*, Salsa Cheddar",
-            immagine: "patatine-al-formaggio.jpg",
+            immagine: "assets/img/patatine-al-formaggio.jpg",
             varianti: [
                 {
                     tipo: "Classiche",
@@ -144,7 +144,7 @@ let data = {
         {
             nome: "AMERICAN PULLED PORK",
             descrizione: "Patatine Lambweston*, American Pulled Pork, Salsa Barbecue e Salsa Cheddar",
-            immagine: "american-pulled-pork.jpg",
+            immagine: "assets/img/american-pulled-pork.jpg",
             varianti: [
                 {
                     tipo: "Classiche",
@@ -159,7 +159,7 @@ let data = {
         {
             nome: "PISTACCHIO E MORTADELLA",
             descrizione: "Patatine Lambweston*, Mortadella, Salsa al Pistacchio e granella di Pistacchio",
-            immagine: "pistacchio-e-mortadella.jpg",
+            immagine: "assets/img/pistacchio-e-mortadella.jpg",
             varianti: [
                 {
                     tipo: "Classiche",
@@ -174,13 +174,13 @@ let data = {
         {
             nome: "CROCCHETTE DI PATATE",
             descrizione: "Crocchette di Patate*",
-            immagine: "crocchette-di-patate.jpg",
+            immagine: "assets/img/crocchette-di-patate.jpg",
             prezzo: 2.50
         },
         {
             nome: "NUGGETS DI POLLO (BIRBE)",
             descrizione: "Birbe di pollo croccanti*",
-            immagine: "nuggets-di-pollo.jpg",
+            immagine: "assets/img/nuggets-di-pollo.jpg",
             prezzo: 4.40
         }
     ]

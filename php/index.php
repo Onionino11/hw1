@@ -1,8 +1,7 @@
-
 <html>
 <head>
     <?php include 'header.php'; ?>
-    <script src="Data.js"></script>
+    <script src="assets/js/Data.js"></script>
 </head>
 <body>
     <div id="modal-view" class="hidden"></div>
