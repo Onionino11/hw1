@@ -1,5 +1,5 @@
 <div id="cart">
-    <div id="panel-heading"> <img class="panel-icon" class="icon" src="assets/img/cart.svg"> Il tuo ordine</div>
+    <div id="panel-heading"> <img class="panel-icon" class="icon" src="../assets/img/cart.svg"> Il tuo ordine</div>
     <div id="panel-body">
         <div id="cart-collection"><div class="cart-item">
             <div class="cart-item-left">
@@ -21,5 +21,5 @@
     <div id="cart-total">
         Totale ordine: <strong id="totale">0,00 €</strong>
     </div>
-    <strong id="ConcludiOrdine"> Concludi Ordine <img src="assets/img/avanti.svg" class="icon" ></strong>
+    <strong id="ConcludiOrdine"> Concludi Ordine <img src="../assets/img/avanti.svg" class="icon" ></strong>
 </div>
