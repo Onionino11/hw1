@@ -174,7 +174,7 @@ header {
 
 #promo {
     background-color: rgb(92, 51, 51);
-    background-image: url(back.jpeg);
+    background-image: url(../img/back.jpeg);
     background-position:  right; 
     background-repeat: no-repeat;
     background-size: 50%;
@@ -457,7 +457,7 @@ img {
     margin: 2px;
 }
 
-.submit{
+submit{
     background-color:rgb(238, 127, 1);
     color: white;
     border-radius: 7px;
@@ -697,6 +697,7 @@ img {
     border: 0px;
     margin: 5px;
     font-size: 14px;
+    font-weight: bold;
 }
 #ConcludiOrdine:hover{
     background-color:rgb(197, 105, 0);
@@ -804,20 +805,20 @@ img {
 
 @media (max-width: 768px) {
     .panel-item {
-        max-width: 100%; /* Adatta la larghezza al contenitore */
+        max-width: 100%; 
         
     }
 
     .item-body {
-        text-align: center; /* Centra il contenuto */
+        text-align: center; 
     }
 
     .item-img {
-        max-width: 40%; /* L'immagine occupa tutta la larghezza disponibile */
+        max-width: 40%; 
     }
 
     .item-button {
-        justify-content: center; /* Centra il pulsante */
+        justify-content: center; 
     }
 }
 
@@ -826,14 +827,15 @@ img {
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    padding: 20px 0px;
+    position: fixed;
+    padding: 0;
     top: 0;
     left: 0;
-    height: auto;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 900;
+    overflow: hidden;
 }
 
 #modal-view.hidden {
@@ -845,12 +847,20 @@ img {
     padding: 20px;
     position: relative;
     border-radius: 10px;
-    width: 50%;
+    width: 50vw;
+    max-width: 600px;
+    min-width: 300px;
+    max-height: 90vh;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
 }
 
+.popup-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
 
 .popup-title {
     flex-grow: 1;
@@ -990,4 +1000,11 @@ img {
     margin-left: -10px;
     margin-top: -15px;
     color: gray;
+}
+
+
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
 }

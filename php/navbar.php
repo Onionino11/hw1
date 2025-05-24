@@ -16,7 +16,7 @@
         <div id="nav-form">
             <input class="nav-input" type="text" placeholder="Email">
             <input class="nav-input" type="text" placeholder="Password">
-            <button id="nav-login">Login</button>
+            <submit id="nav-login">Login</submit>
         </div>
         <a class="linknero" id="nav-flag" href="#" data-linguaattuale="Italiano"> <img src="../assets/img/Flag_of_Italy.svg">
             <span id="nav-freccia">▼</span>

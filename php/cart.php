@@ -21,5 +21,5 @@
     <div id="cart-total">
         Totale ordine: <strong id="totale">0,00 €</strong>
     </div>
-    <strong id="ConcludiOrdine"> Concludi Ordine <img src="../assets/img/avanti.svg" class="icon" ></strong>
+    <submit id="ConcludiOrdine"> Concludi Ordine <img src="../assets/img/avanti.svg" class="icon" ></submit>
 </div>

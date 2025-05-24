@@ -6,6 +6,7 @@ const popup = document.querySelector('#modal-view');
 
 function showPopup() {
     popup.classList.remove('hidden');
+    document.body.classList.add('modal-open'); // Blocca lo scroll
 
     const banneroffert = document.createElement('div');
     banneroffert.classList.add('popup-content');
@@ -17,7 +18,7 @@ function showPopup() {
     closeButton.classList.add('close-button');
 
     const closeIcon = document.createElement('img');
-    closeIcon.src = 'assets/img/xbianca.svg';
+    closeIcon.src = '../assets/img/xbianca.svg';
     closeIcon.classList.add('close-icon');
     closeButton.appendChild(closeIcon);
     closeButton.addEventListener('click', removePopup);
@@ -25,6 +26,7 @@ function showPopup() {
     function removePopup() {
         popup.removeChild(banneroffert);
         popup.classList.add('hidden');
+        document.body.classList.remove('modal-open');
         promoScopri.addEventListener('click', showPopup);
     }
 
