@@ -1,6 +1,3 @@
-// campanella.js
-// Gestione campanella/letterbox
-
 const navCampanella = document.querySelector('#nav-campanella');
 function displayletterbox() {
     const element = document.querySelector('#letterbox');

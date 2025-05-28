@@ -1,4 +1,12 @@
+<?php 
+    if (isset($_COOKIE['loggato']) && $_COOKIE['loggato'] === 'true') {
+    $loggato = true;}
+    else $loggato = false;
+
+?>
+
 <nav>
+    
     <h3 id="home"><a id="navbar-brand" href="#">Maluburger</a></h3>
     <div id="navbar-header">
         <div id="nav-campanella"><a href="#"><img class="icon" src="../assets/img/campanella.svg">
@@ -7,17 +15,26 @@
                     <div id="letterbox-noItem"><img src="../assets/img/cart.svg"> Nessuna notifica</div>
                 </div>
             </a></div>
-        <p id="nav-pippo">
+
+        <p id="nav-pippo" class="<?php if($loggato) echo 'hidden'; ?>">
             <strong>
-                <a id="nav-registrazione" class="linknero" href="#">Registrazione</a>
+                <a id="nav-registrazione" class="linknero" href="singup.php">Registrazione</a>
                 <a id="recupero_pass" class="linknero" href="#">Password dimenticata?</a>
             </strong>
         </p>
-        <div id="nav-form">
-            <input class="nav-input" type="text" placeholder="Email">
-            <input class="nav-input" type="text" placeholder="Password">
-            <submit id="nav-login">Login</submit>
-        </div>
+        <?php if($loggato): ?>
+            <form action="logout_cookie.php" method="get" class="form">
+                <input type="hidden" name="logout" value="1">
+                <input type="submit" value="Logout" class="submit">
+            </form>
+        <?php else: ?>
+            <form action="login_cookie.php" method="get" class="form">
+                <input class="nav-input" type="text" placeholder="Email" name="email">
+                <input class="nav-input" type="password" placeholder="Password" name="password">
+                <input type="submit" name="login" value="Accedi" class="submit">
+            </form>
+        <?php endif; ?>
+
         <a class="linknero" id="nav-flag" href="#" data-linguaattuale="Italiano"> <img src="../assets/img/Flag_of_Italy.svg">
             <span id="nav-freccia">▼</span>
         </a>
@@ -29,3 +46,4 @@
         <div id="nav-profilo"><a href="#"><img class="icon" src="../assets/img/profilo.svg"></a></div>
     </div>
 </nav>
+

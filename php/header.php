@@ -12,5 +12,6 @@
     <script src="../assets/js/campanella.js" defer></script>
     <script src="../assets/js/prodotti.js" defer></script>
     <script src="../assets/js/orari.js" defer></script>
+    <script src="../assets/js/validazione.js" defer></script>
 </head>
 </html>

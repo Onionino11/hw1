@@ -1,12 +1,9 @@
-// popup.js
-// Gestione popup offerte speciali
-
 const promoScopri = document.querySelector('#promo-scopri');
 const popup = document.querySelector('#modal-view');
 
 function showPopup() {
     popup.classList.remove('hidden');
-    document.body.classList.add('modal-open'); // Blocca lo scroll
+    document.body.classList.add('modal-open'); 
 
     const banneroffert = document.createElement('div');
     banneroffert.classList.add('popup-content');

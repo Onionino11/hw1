@@ -1,6 +1,3 @@
-// orari.js
-// Fetch orari e info Maluburger
-
 function orariGiornalieri() {
     fetch('https://overpass-api.de/api/interpreter?data=[out:json];node["amenity"="fast_food"]["name"="Maluburger"];out;')
         .then(onSuccess, onError)

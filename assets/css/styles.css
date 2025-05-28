@@ -457,7 +457,7 @@ img {
     margin: 2px;
 }
 
-submit{
+.submit{
     background-color:rgb(238, 127, 1);
     color: white;
     border-radius: 7px;
@@ -1007,4 +1007,12 @@ body.modal-open {
     overflow: hidden;
     position: fixed;
     width: 100vw;
+}
+
+
+#nav-pippo.hidden {
+    display: none 
+}
+.form.hidden {
+    display: none 
 }

@@ -1,6 +1,3 @@
-// prodotti.js
-// Creazione prodotti, fetch Spoonacular, gestione panel
-
 function createItem(elemento) {
     const panelItem = document.createElement('div');
     panelItem.classList.add('panel-item', 'boxed');
@@ -120,12 +117,6 @@ function createItem(elemento) {
     return panelItem;
 }
 
-const panelBody = document.querySelector('#panel-body');
-for (const elemento of data.categorie) {
-    const panelItem = createItem(elemento);
-    panelBody.appendChild(panelItem);
-}
-
 function getNumberof(product){
     let number = 0;
     const panelItems = document.querySelectorAll('#panel-body .panel-item');
@@ -196,6 +187,7 @@ function onJsonItems(data) {
         };
         console.log(element);
         const panelItem = createItem(element);
+        const panelBody = document.querySelector('#panel-body');
         panelBody.appendChild(panelItem);
     }
 }

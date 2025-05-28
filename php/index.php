@@ -1,6 +1,7 @@
 <html>
 <head>
     <?php include 'header.php'; ?>
+    <script src="../assets/js/index.js" defer></script>
 </head>
 <body>
     <div id="modal-view" class="hidden"></div>
@@ -8,7 +9,10 @@
     <?php include 'header_section.php'; ?>
     <?php include 'navigazione.php'; ?>
     <article>
-        <?php include 'panel.php'; ?>
+        <section id="panel">
+          <div id="panel-heading"> <img class="panel-icon" class="icon" src="../assets/img/tag.png"> Menu'</div>
+            <div id="panel-body">  </div>
+        </section>
         <?php include 'cart.php'; ?>
     </article>
     <?php include 'footer.php'; ?>
