@@ -1,5 +1,6 @@
 <html>
 <head>
+    <?php include 'include_alert.php'; ?>
     <title>Maluburger - MHW3 -Antonino Cipolla</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">

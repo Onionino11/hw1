@@ -13,7 +13,7 @@
         <section id="panel">
             <div id="panel-heading"> <img class="panel-icon" class="icon" src="../assets/img/key.svg"> Registrazione</div>
             <div id="panel-body">
-                <form action="index.php" method="post" class="form">
+                <form action="salva.php" method="post" class="form">
 
                     <div class="form-group">
                         <label for="email" class="control-label">Email</label>
@@ -133,3 +133,4 @@
 </body>
 
 </html>
+

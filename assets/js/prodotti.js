@@ -177,13 +177,16 @@ function onJsonItems(data) {
     const Results= data.results
     for (item of Results) {
         const element = {
-            prodotto: 1,
-            nome: item.title,
-            descrizione: 'No description',
-            immagine: item.image,
-            burger: true,
-            bestseller: false,
-            prezzo: getRandomFloat(7,12)
+            prodotto: item.categoria || 0,
+            immagine: item.immagine || 'default.png',
+            nome: item.nome || 'Sconosciuto',
+            descrizione: item.descrizione || 'Nessuna descrizione disponibile.',
+            prodotti: item.prodotti || 0,
+            prezzo: item.prezzo || getRandomFloat(1, 20),
+            bestseller: item.bestseller || false,
+            burger: item.burger || false,
+            chips: item.chips || false,
+            drink: item.drink || false
         };
         console.log(element);
         const panelItem = createItem(element);

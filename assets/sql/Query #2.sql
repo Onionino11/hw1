@@ -26,3 +26,16 @@ VALUES
 ('luca.verdi@email.it', '$2y$10$hash3', 'Luca', 'Verdi', '1992-12-01', 'Napoli', 'NA', '3335554444', 1, 'Via Napoli', '5', 'Verdi', '1', '80100', 'Italia', 'm'),
 ('anna.neri@email.it', '$2y$10$hash4', 'Anna', 'Neri', '1998-03-15', 'Torino', 'TO', '3332223333', 0, 'Via Torino', '8', 'Neri', '4', '10100', 'Italia', 'f'),
 ('paolo.blu@email.it', '$2y$10$hash5', 'Paolo', 'Blu', '1980-11-30', 'Firenze', 'FI', '3336667777', 1, 'Via Firenze', '12', 'Blu', '5', '50100', 'Italia', 'm');
+CREATE TABLE prodotti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    categoria VARCHAR(100) DEFAULT '0',
+    immagine VARCHAR(255) DEFAULT 'default.png',
+    nome VARCHAR(255) DEFAULT 'Sconosciuto',
+    descrizione TEXT DEFAULT 'Nessuna descrizione disponibile.',
+    prodotti VARCHAR(255) DEFAULT '0',
+    prezzo DECIMAL(6,2) DEFAULT 0.00,
+    bestseller BOOLEAN DEFAULT FALSE,
+    burger BOOLEAN DEFAULT FALSE,
+    chips BOOLEAN DEFAULT FALSE,
+    drink BOOLEAN DEFAULT FALSE
+);

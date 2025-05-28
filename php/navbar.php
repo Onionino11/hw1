@@ -22,12 +22,12 @@
             </strong>
         </p>
         <?php if($loggato): ?>
-            <form action="logout_cookie.php" method="get" class="form">
+            <form action="logout_cookie.php" method="get" class="form" id="nav-form">
                 <input type="hidden" name="logout" value="1">
                 <input type="submit" value="Logout" class="submit">
             </form>
         <?php else: ?>
-            <form action="login_cookie.php" method="get" class="form">
+            <form action="login_cookie.php" method="get" class="form" id="nav-form">
                 <input class="nav-input" type="text" placeholder="Email" name="email">
                 <input class="nav-input" type="password" placeholder="Password" name="password">
                <?php  if (isset($_GET['err']) && $_GET['err'] == 1) echo "Password errata" ?>
