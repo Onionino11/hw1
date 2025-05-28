@@ -80,7 +80,6 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="zip" value="">
 
                     </div>
 

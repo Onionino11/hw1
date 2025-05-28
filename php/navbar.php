@@ -1,8 +1,7 @@
 <?php 
-    if (isset($_COOKIE['loggato']) && $_COOKIE['loggato'] === 'true') {
+    if (isset($_COOKIE['loggato'])) {
     $loggato = true;}
     else $loggato = false;
-
 ?>
 
 <nav>
@@ -31,6 +30,7 @@
             <form action="login_cookie.php" method="get" class="form">
                 <input class="nav-input" type="text" placeholder="Email" name="email">
                 <input class="nav-input" type="password" placeholder="Password" name="password">
+               <?php  if (isset($_GET['err']) && $_GET['err'] == 1) echo "Password errata" ?>
                 <input type="submit" name="login" value="Accedi" class="submit">
             </form>
         <?php endif; ?>

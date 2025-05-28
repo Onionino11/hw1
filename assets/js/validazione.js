@@ -3,16 +3,47 @@ function validazione(event) {
     let password = null;
     let confirmPassword = null;
     const form = event.target;
+    let passwordField = null;
     for (let i = 0; i < form.elements.length; i++) {
         const field = form.elements[i];
         if (field.type === 'submit' || field.type === 'hidden' || field.type === 'button') continue;
-        if (field.name === 'password') password = field.value;
+        if (field.name === 'password') {
+            password = field.value;
+            passwordField = field;
+        }
         if (field.name === 'confirm_password') confirmPassword = field.value;
         if (field.value.trim().length <= 1) {
             if (field.name === 'accept_marketing') continue;
             valid = false;
             var missingField = field;
             break;
+        }
+    }
+    if (password !== null) {
+        if (password.length < 8) {
+            alert("La password deve essere lunga almeno 8 caratteri.");
+            event.preventDefault();
+            return;
+        }
+        if (!/[A-Z]/.test(password)) {
+            alert("La password deve contenere almeno una lettera maiuscola.");
+            event.preventDefault();
+            return;
+        }
+        if (!/[a-z]/.test(password)) {
+            alert("La password deve contenere almeno una lettera minuscola.");
+            event.preventDefault();
+            return;
+        }
+        if (!/[0-9]/.test(password)) {
+            alert("La password deve contenere almeno un numero.");
+            event.preventDefault();
+            return;
+        }
+        if (!/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password)) {
+            alert("La password deve contenere almeno un simbolo.");
+            event.preventDefault();
+            return;
         }
     }
     if (!valid) {
