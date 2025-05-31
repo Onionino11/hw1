@@ -89,42 +89,36 @@ function createItem(elemento) {
         square.textContent = '>';
         itemButton.appendChild(square);
     } else {
+        prodottiLink.href = '../php/add_to_cart.php?id=' + encodeURIComponent(elemento.prodotto) +
+            '&nome=' + encodeURIComponent(elemento.nome) +
+            '&descrizione=' + encodeURIComponent(elemento.descrizione) +
+            '&prezzo=' + encodeURIComponent(elemento.prezzo);
         prodottiText.classList.add('N-Prodotti');
         prodottiText.textContent = elemento.prezzo + '€';
         prodottiLink.appendChild(prodottiText);
-        const square = document.createElement('div');
-        square.classList.add('square');
-        square.textContent = '+';
-        itemButton.appendChild(square);
+        const addLink = document.createElement('a');
+        addLink.classList.add('square');
+        addLink.textContent = '+';
+        addLink.href = '../php/add_to_cart.php?id=' + encodeURIComponent(elemento.prodotto) +
+            '&nome=' + encodeURIComponent(elemento.nome) +
+            '&descrizione=' + encodeURIComponent(elemento.descrizione) +
+            '&prezzo=' + encodeURIComponent(elemento.prezzo);
+        itemButton.appendChild(addLink);
     }
 
     itemBody.appendChild(itemButton);
     if (elemento.nome === "MALU BURGER (SOLO PANINO)") {
-        itemButton.addEventListener('click', function() {
-            window.location.href = '../php/prodotti_view.php?query=hamburger&number=' + elemento.prodotti;
-        });
+        itemButton.addEventListener('click', goToHamburger);
     } else if (elemento.nome === "PER INIZIARE") {
-        itemButton.addEventListener('click', function() {
-            window.location.href = '../php/prodotti_view.php?query=snac&number=' + elemento.prodotti;
-        });
+        itemButton.addEventListener('click', goToSnac);
     } else if (elemento.nome === "MALU PROMO MENU'") {
-        itemButton.addEventListener('click', function() {
-            window.location.href = '../php/prodotti_view.php?query=pasta&number=' + elemento.prodotti;
-        });
+        itemButton.addEventListener('click', goToPasta);
     } else if (elemento.nome === "MALU LIGHT") {
-        itemButton.addEventListener('click', function() {
-            window.location.href = '../php/prodotti_view.php?query=salad&number=' + elemento.prodotti;
-        });
+        itemButton.addEventListener('click', goToSalad);
     } else if (elemento.nome === "DA BERE") {
-        itemButton.addEventListener('click', function() {
-            window.location.href = '../php/prodotti_view.php?query=drink&number=' + elemento.prodotti;
-        });
+        itemButton.addEventListener('click', goToDrink);
     } else if (elemento.nome === "DOLCI") {
-        itemButton.addEventListener('click', function() {
-            window.location.href = '../php/prodotti_view.php?query=dessert&number=' + elemento.prodotti;
-        });
-    } else if(elemento.prezzo>0){
-        // itemButton.addEventListener('click', addtoCart); 
+        itemButton.addEventListener('click', goToDessert);
     }
     panelItem.appendChild(itemBody);
     return panelItem;
@@ -244,4 +238,23 @@ function hideItemsCategoria() {
 
 function getRandomFloat(min, max) {
     return ((Math.random() * (max - min) + min).toFixed(1)+'0');
+}
+
+function goToHamburger() {
+    window.location.href = '../php/prodotti_view.php?query=hamburger&number=' + getNumberof('MALU BURGER (SOLO PANINO)');
+}
+function goToSnac() {
+    window.location.href = '../php/prodotti_view.php?query=snac&number=' + getNumberof('PER INIZIARE');
+}
+function goToPasta() {
+    window.location.href = '../php/prodotti_view.php?query=pasta&number=' + getNumberof("MALU PROMO MENU'");
+}
+function goToSalad() {
+    window.location.href = '../php/prodotti_view.php?query=salad&number=' + getNumberof('MALU LIGHT');
+}
+function goToDrink() {
+    window.location.href = '../php/prodotti_view.php?query=drink&number=' + getNumberof('DA BERE');
+}
+function goToDessert() {
+    window.location.href = '../php/prodotti_view.php?query=dessert&number=' + getNumberof('DOLCI');
 }

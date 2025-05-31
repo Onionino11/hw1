@@ -54,6 +54,28 @@ CREATE TABLE IF NOT EXISTS prodotti (
     drink BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (categoria) REFERENCES categoria(id)
 );
+-- Tabella carrelli (un carrello per utente)
+CREATE TABLE IF NOT EXISTS carrelli (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    totale DECIMAL(8,2) DEFAULT 0.00,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Tabella prodotti nel carrello
+CREATE TABLE IF NOT EXISTS carrello_prodotti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    carrello_id INT NOT NULL,
+    prodotto_id INT NOT NULL,
+    nome VARCHAR(255),
+    descrizione TEXT,
+    prezzo DECIMAL(6,2),
+    quantita INT DEFAULT 1,
+    FOREIGN KEY (carrello_id) REFERENCES carrelli(id),
+    FOREIGN KEY (prodotto_id) REFERENCES prodotti(id)
+);
+
 INSERT INTO categoria (nome, descrizione, immagine, prodotti, burger, chips, drink)
 VALUES
 ('PER INIZIARE', 'Come fai a non farti tentare? I migliori prodotti fritti in olio di semi di girasole Altoleico', 'Classiche.jpg', 9, FALSE, FALSE, FALSE),

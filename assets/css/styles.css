@@ -700,6 +700,11 @@ img {
     font-size: 14px;
     font-weight: bold;
 }
+
+#ConcludiOrdine.hidden {
+    display: none;
+}
+
 #ConcludiOrdine:hover{
     background-color:rgb(197, 105, 0);
     cursor: pointer;

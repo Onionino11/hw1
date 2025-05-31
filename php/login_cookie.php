@@ -34,7 +34,10 @@ if ((isset($_POST['email']) && isset($_POST['password'])) || (isset($_GET['email
     header('Location: index.php?err=1');
     exit();
 }
-
+else {
+    header('Location: index.php');
+    exit();
+}
 
 
 
