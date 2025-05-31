@@ -9,7 +9,7 @@
     <div id="cart-total">
         Totale ordine: <strong id="totale">0,00 €</strong>
     </div>
-    <button id="ConcludiOrdine" type="submit"> Concludi Ordine <img src="../assets/img/avanti.svg" class="icon" ></button>
+    <a href="checkout.php" id="ConcludiOrdine" class="btn-concludi-ordine"><span>Concludi Ordine</span> <img src="../assets/img/avanti.svg" class="icon"></a>
 </div>
 
 
