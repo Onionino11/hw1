@@ -40,25 +40,25 @@ function createItem(elemento) {
     const opzionali = document.createElement('div');
     opzionali.classList.add('opzionali');
 
-    if (elemento.bestseller) {
+    if (elemento.bestseller=="1") {
         const bestseller = document.createElement('div');
         bestseller.classList.add('bestseller');
         bestseller.textContent = 'Best seller';
         opzionali.appendChild(bestseller);
     }
-    if (elemento.burger) {
+    if (elemento.burger =="1") {
         const burgerIcon = document.createElement('img');
         burgerIcon.classList.add('burger', 'icon');
         burgerIcon.src = '../assets/img/burger.svg';
         opzionali.appendChild(burgerIcon);
     }
-    if (elemento.chips) {
+    if (elemento.chips == "1") {
         const chipsIcon = document.createElement('img');
         chipsIcon.classList.add('chips', 'icon');
         chipsIcon.src = '../assets/img/chips.svg';
         opzionali.appendChild(chipsIcon);
     }
-    if (elemento.drink) {
+    if (elemento.drink == "1") {
         const drinkIcon = document.createElement('img');
         drinkIcon.classList.add('drink', 'icon');
         drinkIcon.src = '../assets/img/drink.svg';
@@ -68,7 +68,8 @@ function createItem(elemento) {
     itemTitle.appendChild(itemCategory);
     itemTitle.appendChild(opzionali);
     itemDescription.appendChild(itemTitle);
-    itemDescription.appendChild(document.createTextNode(elemento.descrizione));
+    // Mostra sempre una descrizione di default se vuota
+    itemDescription.appendChild(document.createTextNode(elemento.descrizione && elemento.descrizione.trim() !== '' ? elemento.descrizione : 'Nessuna descrizione disponibile.'));
     itemBody.appendChild(itemDescription);
 
     const itemButton = document.createElement('div');
@@ -99,17 +100,29 @@ function createItem(elemento) {
 
     itemBody.appendChild(itemButton);
     if (elemento.nome === "MALU BURGER (SOLO PANINO)") {
-        itemButton.addEventListener('click', createHamburger); 
+        itemButton.addEventListener('click', function() {
+            window.location.href = '../php/prodotti_view.php?query=hamburger&number=' + elemento.prodotti;
+        });
     } else if (elemento.nome === "PER INIZIARE") {
-        itemButton.addEventListener('click', createFried); 
+        itemButton.addEventListener('click', function() {
+            window.location.href = '../php/prodotti_view.php?query=snac&number=' + elemento.prodotti;
+        });
     } else if (elemento.nome === "MALU PROMO MENU'") {
-        itemButton.addEventListener('click', createPlate); 
+        itemButton.addEventListener('click', function() {
+            window.location.href = '../php/prodotti_view.php?query=pasta&number=' + elemento.prodotti;
+        });
     } else if (elemento.nome === "MALU LIGHT") {
-        itemButton.addEventListener('click', createSalad); 
+        itemButton.addEventListener('click', function() {
+            window.location.href = '../php/prodotti_view.php?query=salad&number=' + elemento.prodotti;
+        });
     } else if (elemento.nome === "DA BERE") {
-        itemButton.addEventListener('click', createDrink); 
+        itemButton.addEventListener('click', function() {
+            window.location.href = '../php/prodotti_view.php?query=drink&number=' + elemento.prodotti;
+        });
     } else if (elemento.nome === "DOLCI") {
-        itemButton.addEventListener('click', createDessert); 
+        itemButton.addEventListener('click', function() {
+            window.location.href = '../php/prodotti_view.php?query=dessert&number=' + elemento.prodotti;
+        });
     } else if(elemento.prezzo>0){
         // itemButton.addEventListener('click', addtoCart); 
     }
@@ -156,7 +169,7 @@ function createDessert(){
 
 function createCibo(query,number) {
     hideItemsCategoria(); 
-    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + query + '&number=' + number + '&apiKey=' + apiKey)
+    fetch('../php/api_prodotti.php?query=' + encodeURIComponent(query) + '&number=' + number)
         .then(onSuccess, onError)
         .then(onJsonItems);
 }
@@ -173,22 +186,46 @@ function onError(error) {
 }
 
 function onJsonItems(data) {
-    console.log('Risultato della fetch:', data); 
-    const Results= data.results
-    for (item of Results) {
-        const element = {
-            prodotto: item.categoria || 0,
-            immagine: item.immagine || 'default.png',
-            nome: item.nome || 'Sconosciuto',
-            descrizione: item.descrizione || 'Nessuna descrizione disponibile.',
-            prodotti: item.prodotti || 0,
-            prezzo: item.prezzo || getRandomFloat(1, 20),
-            bestseller: item.bestseller || false,
-            burger: item.burger || false,
-            chips: item.chips || false,
-            drink: item.drink || false
-        };
-        console.log(element);
+    console.log('Risultato della fetch:', data);
+    const Results = data.results || [];
+    for (const item of Results) {
+        let element;
+        // Controllo se i campi sono vuoti o nulli e applico fallback
+        const nome = item.nome && item.nome.trim() !== '' ? item.nome : 'Sconosciuto';
+        const descrizione = item.descrizione && item.descrizione.trim() !== '' ? item.descrizione : 'Nessuna descrizione disponibile.';
+        let immagine = item.immagine && item.immagine.trim() !== '' ? item.immagine : 'default.png';
+        if (immagine && !immagine.startsWith('http') && !immagine.endsWith('.png') && !immagine.endsWith('.jpg') && !immagine.endsWith('.jpeg')) {
+            immagine = 'default.png';
+        }
+        // Modifica: considera prodotto DB se c'è item.nome (non richiede descrizione)
+        if (item.nome) {
+            element = {
+                prodotto: item.id || 0,
+                immagine: immagine,
+                nome: nome,
+                descrizione: descrizione,
+                prodotti: item.prodotti || 0,
+                prezzo: item.prezzo || '',
+                bestseller: item.bestseller || false,
+                burger: item.burger || false,
+                chips: item.chips || false,
+                drink: item.drink || false
+            };
+        } else {
+            // Risposta Spoonacular
+            element = {
+                prodotto: item.id || 0,
+                immagine: item.image || 'default.png',
+                nome: item.title || 'Sconosciuto',
+                descrizione: item.summary ? item.summary.replace(/<[^>]+>/g, '') : 'Nessuna descrizione disponibile.',
+                prodotti: 0,
+                prezzo: getRandomFloat(5, 20),
+                bestseller: false,
+                burger: false,
+                chips: false,
+                drink: false
+            };
+        }
         const panelItem = createItem(element);
         const panelBody = document.querySelector('#panel-body');
         panelBody.appendChild(panelItem);

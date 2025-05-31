@@ -17,61 +17,61 @@ let data = {
         }
     ],
 
-    categorie: [
-        {
-            nome: 'PER INIZIARE',
-            descrizione: 'Come fai a non farti tentare? I migliori prodotti fritti in olio di semi di girasole Altoleico',
-            immagine: 'Classiche.jpg',
-            prodotti: 9,
-            burger: false,
-            chips: false,
-            drink: false
-        },
-        {
-            nome: 'MALU PROMO MENU\'',
-            descrizione: 'MENU COMPLETO BURGER CONTORNO E BEVANDA\'',
-            immagine: 'Classico.jpeg',
-            prodotti: 14,
-            burger: true,
-            chips: true,
-            drink: true,
-            bestseller: true
-        },
-        {
-            nome: 'MALU BURGER (SOLO PANINO)',
-            descrizione: 'Piccolo = 100gr / Medio = 180gr / Malu = Tutto doppio',
-            immagine: 'Pistacchioso.jpeg',
-            prodotti: 16,
-            burger: true,
-            chips: false,
-            drink: false
-        },
-        {
-            nome: 'MALU LIGHT',
-            descrizione: 'Insalate Hamburger Veg. Piatti Leggeri ma dal Gusto Malu',
-            immagine: 'MaluLight.jpeg',
-            prodotti: 5,
-            burger: false,
-            chips: false,
-            drink: false
-        },
-        {
-            nome: 'DA BERE',
-            descrizione: '',
-            immagine: 'DaBere.jpeg',
-            prodotti: 13,
-            burger: false,
-            chips: false,
-            drink: true
-        },
-        {
-            nome: 'DOLCI',
-            descrizione: 'Per finire in bellezza una Cena Malu',
-            immagine: 'Dolci.jpg',
-            prodotti: 1,
-            burger: false,
-            chips: false,
-            drink: false
-        }
-    ]
+    // categorie: [
+    //     {
+    //         nome: 'PER INIZIARE',
+    //         descrizione: 'Come fai a non farti tentare? I migliori prodotti fritti in olio di semi di girasole Altoleico',
+    //         immagine: 'Classiche.jpg',
+    //         prodotti: 9,
+    //         burger: false,
+    //         chips: false,
+    //         drink: false
+    //     },
+    //     {
+    //         nome: 'MALU PROMO MENU\'',
+    //         descrizione: 'MENU COMPLETO BURGER CONTORNO E BEVANDA\'',
+    //         immagine: 'Classico.jpeg',
+    //         prodotti: 14,
+    //         burger: true,
+    //         chips: true,
+    //         drink: true,
+    //         bestseller: true
+    //     },
+    //     {
+    //         nome: 'MALU BURGER (SOLO PANINO)',
+    //         descrizione: 'Piccolo = 100gr / Medio = 180gr / Malu = Tutto doppio',
+    //         immagine: 'Pistacchioso.jpeg',
+    //         prodotti: 16,
+    //         burger: true,
+    //         chips: false,
+    //         drink: false
+    //     },
+    //     {
+    //         nome: 'MALU LIGHT',
+    //         descrizione: 'Insalate Hamburger Veg. Piatti Leggeri ma dal Gusto Malu',
+    //         immagine: 'MaluLight.jpeg',
+    //         prodotti: 5,
+    //         burger: false,
+    //         chips: false,
+    //         drink: false
+    //     },
+    //     {
+    //         nome: 'DA BERE',
+    //         descrizione: '',
+    //         immagine: 'DaBere.jpeg',
+    //         prodotti: 13,
+    //         burger: false,
+    //         chips: false,
+    //         drink: true
+    //     },
+    //     {
+    //         nome: 'DOLCI',
+    //         descrizione: 'Per finire in bellezza una Cena Malu',
+    //         immagine: 'Dolci.jpg',
+    //         prodotti: 1,
+    //         burger: false,
+    //         chips: false,
+    //         drink: false
+    //     }
+    // ]
 };

@@ -1,5 +1,5 @@
 function orariGiornalieri() {
-    fetch('https://overpass-api.de/api/interpreter?data=[out:json];node["amenity"="fast_food"]["name"="Maluburger"];out;')
+    fetch('../php/orari.php')
         .then(onSuccess, onError)
         .then(onJsonOrariGiornalieri);
 }
